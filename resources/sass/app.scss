@@ -1,14 +1,113 @@
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+$--transparent: transparent;
+$--black: #000000;
+$--white: #ffffff;
+$--ink: #212B36;
+$--ink-light: #454F5B;
+$--ink-lighter: #637381;
+$--ink-lightest: #919EAB;
+$--sky-dark: #C4CDD5;
+$--sky: #DFE3E8;
+$--sky-light: #F4F6F8;
+$--sky-lighter: #F9FAFB;
+$--red-darker: #330101;
+$--red-dark: #BF0711;
+$--red: #DE3618;
+$--red-light: #FEAD9A;
+$--red-lighter: #FBEAE5;
+$--orange-darker: #4A1504;
+$--orange-dark: #C05717;
+$--orange: #F49342;
+$--orange-light: #FFC58B;
+$--orange-lighter: #FCEBDB;
+$--yellow-darker: #573B00;
+$--yellow-dark: #9C6F19;
+$--yellow: #EEC200;
+$--yellow-light: #FFEA8A;
+$--yellow-lighter: #FCF1CD;
+$--green-darker: #173630;
+$--green-dark: #108043;
+$--green: #50B83C;
+$--green-light: #BBE5B3;
+$--green-lighter: #E3F1DF;
+$--teal-darker: #003135;
+$--teal-dark: #00848E;
+$--teal: #47C1BF;
+$--teal-light: #B7ECEC;
+$--teal-lighter: #E0F5F5;
+$--blue-darker: #001429;
+$--blue-dark: #084E8A;
+$--blue: #007ACE;
+$--blue-light: #B4E1FA;
+$--blue-lighter: #EBF5FA;
+$--indigo-darker: #000639;
+$--indigo-dark: #202E78;
+$--indigo: #5C6AC4;
+$--indigo-light: #B3BCF5;
+$--indigo-lighter: #F4F5FA;
+$--purple-darker: #230051;
+$--purple-dark: #50248F;
+$--purple: #9C6ADE;
+$--purple-light: #E3D0FF;
+$--purple-lighter: #F6F0FD;
 
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+:root {
+  	--transparent: #{$--transparent};
+	--black: #{$--black};
+	--white: #{$--white};
+	--ink: #{$--ink};
+	--ink-light: #{$--ink-light};
+	--ink-lighter: #{$--ink-lighter};
+	--ink-lightest: #{$--ink-lightest};
+	--sky-dark: #{$--sky-dark};
+	--sky: #{$--sky};
+	--sky-light: #{$--sky-light};
+	--sky-lighter: #{$--sky-lighter};
+	--red-darker: #{$--red-darker};
+	--red-dark: #{$--red-dark};
+	--red: #{$--red};
+	--red-light: #{$--red-light};
+	--red-lighter: #{$--red-lighter};
+	--orange-darker: #{$--orange-darker};
+	--orange-dark: #{$--orange-dark};
+	--orange: #{$--orange};
+	--orange-light: #{$--orange-light};
+	--orange-lighter: #{$--orange-lighter};
+	--yellow-darker: #{$--yellow-darker};
+	--yellow-dark: #{$--yellow-dark};
+	--yellow: #{$--yellow};
+	--yellow-light: #{$--yellow-light};
+	--yellow-lighter: #{$--yellow-lighter};
+	--green-darker: #{$--green-darker};
+	--green-dark: #{$--green-dark};
+	--green: #{$--green};
+	--green-light: #{$--green-light};
+	--green-lighter: #{$--green-lighter};
+	--teal-darker: #{$--teal-darker};
+	--teal-dark: #{$--teal-dark};
+	--teal: #{$--teal};
+	--teal-light: #{$--teal-light};
+	--teal-lighter: #{$--teal-lighter};
+	--blue-darker: #{$--blue-darker};
+	--blue-dark: #{$--blue-dark};
+	--blue: #{$--blue};
+	--blue-light: #{$--blue-light};
+	--blue-lighter: #{$--blue-lighter};
+	--indigo-darker: #{$--indigo-darker};
+	--indigo-dark: #{$--indigo-dark};
+	--indigo: #{$--indigo};
+	--indigo-light: #{$--indigo-light};
+	--indigo-lighter: #{$--indigo-lighter};
+	--purple-darker: #{$--purple-darker};
+	--purple-dark: #{$--purple-dark};
+	--purple: #{$--purple};
+	--purple-light: #{$--purple-light};
+	--purple-lighter: #{$--purple-lighter};
 }
+
+@tailwind preflight;
+
+@import 'el-variables';
+@import 'node_modules/@eastsideco/polaris-vue/lib/polaris-vue';
+
+@tailwind utilities;

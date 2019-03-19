@@ -2,6 +2,7 @@ BACKEND
 - Laravel
 - Laravel-Shopify
 - Laravel-Telescope
+- Ziggy
 
 FRONTEND
 - Vue
@@ -12,6 +13,7 @@ FRONTEND
 - Laravel-Mix
 - Laravel-Mix-PurgeCSS
 - Axios
+- Turbolinks
 - Babel-Plugin-Component
 - Clean-Webpack-Plugin
 - Cross-Env
