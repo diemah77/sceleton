@@ -1,3 +1,20 @@
 BACKEND
 - Laravel
 - Laravel-Shopify
+- Laravel-Telescope
+
+FRONTEND
+- Vue
+- Vue-Template-Compiler
+- Polaris-Vue
+- Element-UI
+- Tailwind-CSS
+- Laravel-Mix
+- Laravel-Mix-PurgeCSS
+- Axios
+- Babel-Plugin-Component
+- Clean-Webpack-Plugin
+- Cross-Env
+- Lodash
+- Sass
+- Sass-Loader
