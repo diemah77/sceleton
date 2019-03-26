@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Str;
+use App\Freezium\Freezium;
 
 function shop()
 {
@@ -25,4 +25,9 @@ function formatMoney($amount, $currency = 'EUR')
     }
 
     return money_format('%+n', floatval($amount));
+}
+
+function render($component, $data = null)
+{
+    return Freezium::render($component, $data);
 }

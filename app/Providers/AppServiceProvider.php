@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\View;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\View\Factory as ViewFactory;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,13 +25,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Model::unguard();
-                
-        ViewFactory::macro('component', function ($name, $data = [])
-        {
-            $data['name'] = $name;
-            $data['shop'] = shop();
-
-            return View::make('app', ['data' => $data]);
-        });
     }
 }

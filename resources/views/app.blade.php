@@ -4,22 +4,17 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="turbolinks-cache-control" content="no-cache">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Shopify App</title>
      
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
 
-        <script src="{{ mix('/js/manifest.js') }}" defer></script>
-        <script src="{{ mix('/js/vendor.js') }}" defer></script>
-        <script src="{{ mix('/js/app.js') }}" defer></script>
-        
         @routes
     </head>
 
     <body class="font-shopify bg-sky-light text-ink">
-        <div id="app" data-props="{{ json_encode(['data' => $data]) }}"></div>
+        <div id="app" data-props="{{ json_encode($data) }}"></div>
 
         @if(config('shopify-app.esdk_enabled'))
             <script src="https://cdn.shopify.com/s/assets/external/app.js?{{ date('YmdH') }}"></script>
@@ -32,5 +27,9 @@
                 });
             </script>
         @endif
+
+        <script src="{{ mix('/js/manifest.js') }}" defer></script>
+        <script src="{{ mix('/js/vendor.js') }}" defer></script>
+        <script src="{{ mix('/js/app.js') }}" defer></script>
     </body>
 </html>

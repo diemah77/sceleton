@@ -1,10 +1,10 @@
 <template>
 <div class="pb-16">
-	<nav-bar></nav-bar>
+	<nav-bar :path="route().current()"></nav-bar>
 
     <main class="pt-6">	
-		<transition tag="div" name="fade" appear>
-		    <component :is="data.name" :parentData="childProps" @title="setTitle"></component>
+		<transition tag="div" name="fade" mode="out-in">
+		    <component :is="locComponent" :props="locData" :key="pathname"></component>
 		</transition>
     </main>
 </div>
@@ -15,28 +15,27 @@ import NavBar from '@/components/nav'
 
 export default {
 	props: {
-		data: {
+		props: {
 			type: Object,
 			required: false
+		},
+		component: {
+			type: String,
+			required: true
+		},
+		shop: {
+			type: Object,
+			reuqired: true
 		}
 	},
 
 	data()
 	{
 		return {
-			title: ''
-		}
-	},
-
-	computed: {
-		childProps()
-		{
-			let props = Object.assign({}, this.data)
-			
-			delete props.shop
-			delete props.name
-
-			return props
+			locData: this.props,
+			locComponent: this.component,
+			locShop: this.shop,
+			pathname: window.location.pathname
 		}
 	},
 
@@ -48,7 +47,44 @@ export default {
 		setTitle(title)
 		{
 			this.title = title
+		},
+
+		visit(url, pushState)
+		{
+			axios.get(url).then(response => 
+			{
+				this.locComponent = response.data.data.component
+				this.locData = response.data.data.props
+			
+				if (pushState)
+				{
+					history.pushState(null, null, url)
+				}
+			})
 		}
+	},
+
+	created()
+	{
+		window.addEventListener('popstate', event => 
+		{
+			this.visit(location.href, false)
+		})
+
+		this.$root.$on('page-change', url =>
+		{
+			this.visit(url, true)
+		})
 	}
 }
 </script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  	transition: opacity .3s ease;
+
+}
+.fade-enter, .fade-leave-active {
+  	opacity: 0;
+}
+</style>
