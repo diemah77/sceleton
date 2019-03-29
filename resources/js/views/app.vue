@@ -4,7 +4,7 @@
 
     <main class="pt-6">	
 		<transition tag="div" name="fade" mode="out-in">
-		    <component :is="locComponent" :props="locData" :key="pathname"></component>
+		    <component :is="locComponent" :props="locData" :key="href"></component>
 		</transition>
     </main>
 </div>
@@ -35,7 +35,7 @@ export default {
 			locData: this.props,
 			locComponent: this.component,
 			locShop: this.shop,
-			pathname: window.location.pathname
+			href: location.href
 		}
 	},
 
@@ -60,6 +60,8 @@ export default {
 				{
 					history.pushState(null, null, url)
 				}
+
+				this.href = location.href
 			})
 		}
 	},
