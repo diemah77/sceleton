@@ -29,6 +29,13 @@ export default {
 		}
 	},
 
+	provide() 
+	{
+		return { 
+			shop: this.shop 
+		}
+	},
+
 	data()
 	{
 		return {
